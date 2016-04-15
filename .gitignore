@@ -1,1 +1,7 @@
 /nbproject/private/
+/nbproject/
+
+application/cache/*
+!application/cache/index.html
+!application/cache/.htaccess
+index.php
