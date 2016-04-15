@@ -18,16 +18,21 @@ class Welcome extends Application {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
-	{
-            
-                parent::__construct();
-                //construct();
-		//$this->load->view('welcome_message');
+
+    function __construct()
+    {
+        parent::__construct();
+    }
+    
+    
+    public function index()
+    {		
+        //$this->load->view('welcome_message');
                 
-                $this->data['pagebody'] = 'welcome_message';
- 		$this->render();
-	}
+        $this->data['pagebody'] = 'welcome_message';
+ 	$this->render();
+        
+    }
         
         
 
