@@ -11,7 +11,7 @@
  
     public function index()
     {
-        $this->data['pagebody'] = 'homepage';
+        $this->data['pagebody'] = 'homepage_view';
         $this->render();
    }
    
