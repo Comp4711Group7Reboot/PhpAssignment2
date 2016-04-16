@@ -1,3 +1,3 @@
 {players}
-   <p><a href="players/{Player}">{Player}</a></p>
+   <p><a href="player/{Player}">{Player}</a></p>
 {/players}

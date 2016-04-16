@@ -53,5 +53,8 @@ $route['default_controller'] = 'homepage';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['players'] = 'players';
-$route['players/(:any)'] = 'players/portfolio/$1';
+$route['player'] = 'players';
+$route['player/(:any)'] = 'players/portfolio/$1';
+
+$route['stock'] = 'stocks';
+$route['stock/(:any)'] = 'stocks/getStockDetail/$1';
