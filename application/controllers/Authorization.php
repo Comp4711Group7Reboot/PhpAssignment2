@@ -35,7 +35,7 @@ class Authorization extends Application {
     }
 
     function logout() {
-        
+
         $this->session->unset_userdata('userID');
         $this->session->unset_userdata('username');
         $this->session->unset_userdata('userRole');
