@@ -31,7 +31,7 @@
                                                     <a href="/">Home</a>
 						</li>
                                                 <li>
-                                                    <a href="/player">Player</a>
+                                                    <a href="/players">Player</a>
 						</li>
 						<li>
                                                     <a href="/stock">Stock</a>

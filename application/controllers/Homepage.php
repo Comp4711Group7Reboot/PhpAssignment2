@@ -11,6 +11,10 @@
  
     public function index()
     {
+        
+        $this->data['stocks'] = $this->Stock->getStocks();
+        $this->data['players'] = $this->Player->getPlayers();
+        
         $this->data['pagebody'] = 'homepage_view';
         $this->render();
    }
