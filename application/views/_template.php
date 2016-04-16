@@ -42,6 +42,9 @@
                                                 <li>
                                                     <a href="/login">Login</a>
                                                 </li>
+                                                <li>
+                                                    <a href="/login">Registration</a>
+                                                </li>
                                         </ul>
 					
 				</div>
