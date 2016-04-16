@@ -40,10 +40,10 @@
                                                     <a href="/manager">Manager</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/login">Login</a>
+                                                    <a href="/authorization">Login</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/login">Registration</a>
+                                                    <a href="/authorization/register">Registration</a>
                                                 </li>
                                         </ul>
 					
