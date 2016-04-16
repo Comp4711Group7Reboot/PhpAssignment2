@@ -1,6 +1,6 @@
 <?php
  
-class Users extends MY_Model 
+class User extends MY_Model 
 {
     public function __construct() 
     {
@@ -9,7 +9,7 @@ class Users extends MY_Model
     
     public function getUserByName($username)
     {
-        $this->db->where('username', $username);
+        $this->db->where('name', $username);
         $this->db->from('users');
         $query = $this->db->get();
         if ($query->num_rows() < 1)
