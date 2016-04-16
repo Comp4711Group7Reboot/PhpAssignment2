@@ -9,9 +9,9 @@
  */
 
 CREATE TABLE IF NOT EXISTS `users` (
-`id` varchar(10) NOT NULL,
+`id` int NOT NULL AUTO_INCREMENT,
 `name` varchar(20) NOT NULL,
 `password` varchar(64) NOT NULL,
 `role` varchar(20) NOT NULL,
 PRIMARY KEY (`id`)
-+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;

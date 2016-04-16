@@ -14,7 +14,7 @@
         $this->data['stocks'] = $this->Stock->getStocks();
         $this->data['pagebody'] = 'stocks_view';
         $this->render();
-   }
+    }
    
    
    function getStockDetail($name)

@@ -95,5 +95,5 @@ class Player extends CI_Model {
         
         return $playerarr;
     }
-
+    
 }

@@ -14,10 +14,30 @@ class Authorization extends Application {
     }
 
     function register() {
+        
         $this->data['pagebody'] = 'registration';
         $this->render();
     }
 
+    function registerToDatabase()
+    {
+        $data = array(
+                'password' => $_POST['password'],
+                'name' => $_POST['userid'],
+                'role' => 'player'
+                 );
+        $this->User->addUser($data);
+        
+        $username = $this->User->getUserByName($_POST['userid']);
+        
+        $this->session->set_userdata('userID', $username->id);
+        $this->session->set_userdata('username', $username->name);
+        $this->session->set_userdata('userRole', $username->role);
+        $this->session->set_userdata('logged_in', TRUE);
+        
+        redirect('/Homepage');
+    }
+    
     function login() {
         $key = $_POST['userid'];
         $username = $this->User->getUserByName($key);
