@@ -40,10 +40,13 @@
                                                     <a href="/manager">Manager</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/authorization">Login</a>
+                                                    <a href="/authorization/{loginstatus}">{loginholder}</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/authorization/register">Registration</a>
+                                                    {registrationholder}
+                                                </li>
+                                                <li>
+                                                    {username}
                                                 </li>
                                         </ul>
 					

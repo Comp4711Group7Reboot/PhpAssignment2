@@ -18,4 +18,10 @@ class User extends MY_Model
         }
         return $query->row();
     }
+    
+    
+    function addUser($data)
+    {
+        $this->db->insert('users', $data);
+    }
 }
