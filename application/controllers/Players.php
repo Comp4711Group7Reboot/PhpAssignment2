@@ -17,6 +17,8 @@
         //$this->load->model('Player');
         $this->data['players'] = $this->Player->getPlayers();
         
+        //$this->data['players'] = $this->Player->all_with_equity();
+        
         $this->render();
    }
    
@@ -26,6 +28,7 @@
        //$this->load->model('Player');
        
        $this->data['playerprofile'] = $this->Player->getPlayerDetails($name);
+       $this->data['transactions'] = $this->Player->getTransactions($name);
        $this->data['pagebody'] = 'player_portfolio'; // this is the view we want shown
        $this->render();
    }
