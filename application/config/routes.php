@@ -58,3 +58,5 @@ $route['player/(:any)'] = 'players/portfolio/$1';
 
 $route['stock'] = 'stocks';
 $route['stock/(:any)'] = 'stocks/getStockDetail/$1';
+
+$route['users/(:any)'] = 'users/getUserInfo/$1';
