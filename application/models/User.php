@@ -24,4 +24,37 @@ class User extends MY_Model
     {
         $this->db->insert('users', $data);
     }
+    
+    
+    public function getUserInfo($name){
+        
+         $this->db->select('*');
+         $this->db->from('users');
+         $this->db->where('username', $name);
+         $query = $this->db->get();
+         return $query->result_array();
+     }
+    
+    
+    public function getUserStockHoldings($name) {
+ 
+         $this->db->select('*');
+         $this->db->from('stockholdings');
+         $this->db->where('name', $name);
+ 
+         $query = $this->db->get();
+ 
+         return $query->result_array();
+     }
+ 
+
+     public function getUserTransaction($name) {
+ 
+         $this->db->select('*');
+         $this->db->from('transactions');
+         $this->db->where('Player', $name);
+         $query = $this->db->get();
+         return $query->result_array();
+     }
+        
 }
