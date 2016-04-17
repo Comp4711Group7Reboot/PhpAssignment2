@@ -2,6 +2,7 @@
 COMP- 4711 Group 7 Assignment 2 Rebooted
 
 Members:
-
-Rupinder Sandhu
-John Chang
+<ul>
+  <li>Rupinder Sandhu</li>
+  <li>John Chang</li>
+</ul>
