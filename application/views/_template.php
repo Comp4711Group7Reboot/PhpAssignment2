@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{pagetitle}</title>
+    <title>{title}</title>
 
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <link rel='stylesheet' type='text/css' href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
@@ -37,7 +37,7 @@
                                                     <a href="/stock">Stock</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/manager">Manager</a>
+                                                    <a href="/games">Game</a>
                                                 </li>
                                                 <li>
                                                     <a href="/authorization/{loginstatus}">{loginholder}</a>
@@ -45,10 +45,7 @@
                                                 <li>
                                                     {registrationholder}
                                                 </li>
-                                                <li>
-                                                    {username}
-                                                </li>
-                                        </ul>
+                                            </ul>
 					
 				</div>
 				
@@ -56,6 +53,7 @@
 			
 			<div class="row">
 				<div class="col-md-10 col-md-offset-1">
+                                <h2>Welcome {username}</h2>
 				{content}
 			</div>
 		</div>
