@@ -18,7 +18,7 @@ class Games extends Application {
 
     public function index()
     {
-        $this->data['pagebody'] = 'game';    // this is the view we want shown
+        $this->data['pagebody'] = 'game';
         $this->data['title'] = 'Game Page';
         $this->data['gameStatus'] = $this->Game->getStatus();
         $this->data['currentPlayer'] = $this->Game->getCurrentPlayer();
