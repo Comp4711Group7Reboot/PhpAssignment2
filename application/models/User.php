@@ -26,7 +26,8 @@ class User extends MY_Model
     }
     
     
-    public function getUserInfo($name){
+    public function getUserInfo($name)
+    {
         
          $this->db->select('*');
          $this->db->from('users');
@@ -36,7 +37,8 @@ class User extends MY_Model
      }
     
     
-    public function getUserStockHoldings($name) {
+    public function getUserStockHoldings($name) 
+    {
  
          $this->db->select('*');
          $this->db->from('stockholdings');
@@ -48,7 +50,8 @@ class User extends MY_Model
      }
  
 
-     public function getUserTransaction($name) {
+     public function getUserTransaction($name) 
+     {
  
          $this->db->select('*');
          $this->db->from('transactions');
@@ -56,5 +59,25 @@ class User extends MY_Model
          $query = $this->db->get();
          return $query->result_array();
      }
+     
+     
+    public function addToHoldings($info)
+    {
+        $data = array(
+            'token' => $info->token,
+            'stock' => $info->stock,
+            'player' => $this->session->userdata('username'),
+            'quantity' => $info->amount
+        );
+        $this->db->insert('holdings', $data);
+        $data = array(
+            'Stock' => $info->stock,
+            'DateTime' => $info->datetime,
+            'Player' => $this->session->userdata('username'),
+            'Trans' => 'buy',
+            'Quantity' => $info->amount
+        );
+        $this->db->insert('transactions', $data);
+    }
         
 }

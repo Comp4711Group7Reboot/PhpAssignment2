@@ -2,11 +2,13 @@
 
 class Game extends MY_Model {
 
-    public function __construct() {
+    public function __construct() 
+    {
         parent::__construct();
     }
 
-    public function getStatus() {
+    public function getStatus() 
+    {
         $xml = simplexml_load_file('http://bsx.jlparry.com/status');
 
         $round = $xml->round;
@@ -30,15 +32,18 @@ class Game extends MY_Model {
         return array($status);
     }
 
-    public function getStocks() {
+    public function getStocks() 
+    {
         return $this->stock->getStocks(BSX_SERVER . 'data/stocks');
     }
 
-    public function getTrend() {
+    public function getTrend() 
+    {
         return $this->stock->getTrend(BSX_SERVER . 'data/movement');
     }
 
-    public function getCurrentPlayer() {
+    public function getCurrentPlayer() 
+    {
         $this->db->select('*')->from('users');
         $this->db->where('name', $this->session->userdata('username'));
         $query = $this->db->get();
@@ -46,7 +51,8 @@ class Game extends MY_Model {
         return $result;
     }
 
-    public function register($url, $password) {
+    public function register($url, $password) 
+    {
         $this->load->library('session');
         $fields = array(
             'team' => 'S07',
@@ -58,11 +64,13 @@ class Game extends MY_Model {
         $this->session->token = (string) $xml->token;
     }
 
-    public function getPlayerHoldings() {
+    public function getPlayerHoldings() 
+    {
         return $this->User->getUserStockHoldings($this->session->userdata('username'));
     }
 
-    private function sendPost($url, $fields) {
+    private function sendPost($url, $fields) 
+    {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_POST, 1);
@@ -71,6 +79,39 @@ class Game extends MY_Model {
         $response = curl_exec($ch);
         curl_close($ch);
         return $response;
+    }
+    
+    
+    public function buy($code, $quantity)
+    {
+        $this->load->library('session');
+        $fields = array(
+            'team' => 'S07',
+            'token' => $this->session->token,
+            'player' => $this->session->userdata('username'),
+            'stock' => $code,
+            'quantity' => $quantity
+        );
+        $response = $this->sendPost(BSX_SERVER.'buy', $fields);
+        $xml = simplexml_load_string($response);
+        $this->user->addToHoldings($xml);
+    }
+    
+    
+    public function sell($code, $quantity, $token)
+    {
+        $this->load->library('session');
+        $fields = array(
+            'team' => 'S07',
+            'token' => $this->session->token,
+            'player' => $this->session->userdata('username'),
+            'stock' => $code,
+            'quantity' => $quantity,
+            'certificate' => $token
+        );
+        $response = $this->sendPost(BSX_SERVER.'sell', $fields);
+        $xml = simplexml_load_string($response);
+        return $xml;
     }
 
 }

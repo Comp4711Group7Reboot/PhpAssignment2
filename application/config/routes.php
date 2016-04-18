@@ -60,3 +60,6 @@ $route['stock'] = 'stocks';
 $route['stock/(:any)'] = 'stocks/getStockDetail/$1';
 
 $route['users/(:any)'] = 'users/getUserInfo/$1';
+
+
+$route['games/buy'] = 'games/buy';
