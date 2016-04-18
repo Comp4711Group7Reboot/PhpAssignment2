@@ -20,7 +20,7 @@
    function getStockDetail($name)
     {
         $this->data['stockDetail'] = $this->Stock->getStockInfo($name);
-        $this->data['stocktransactions']  = $this->stock->getStockTrans($name);
+        $this->data['stocktransactions']  = $this->Stock->getStockTrans($name);
         $this->data['stockMovements'] = $this->Stock->getStockMovement($name);
         $this->data['pagebody'] = 'stocks_detail';
         $this->render();

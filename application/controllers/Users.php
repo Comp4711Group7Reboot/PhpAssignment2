@@ -4,12 +4,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Users extends Application {
 
-    function __construct() {
+    function __construct() 
+    {
         parent::__construct();
-        $this->load->model('user');
     }
 
-    public function index() {
+    public function index() 
+    {
         if($this->session->userdata('logged_in')){
             $this->getUserInfo($this->session->userdata['username']);
         }else{
@@ -19,7 +20,8 @@ class Users extends Application {
     }
 
     
-    public function getUserInfo($name) {
+    public function getUserInfo($name) 
+    {
 
         $this->data['userstockholdings'] = $this->User->getUserStockHoldings($name);
 
@@ -29,7 +31,7 @@ class Users extends Application {
         $this->data['userprofile'] = $this->User->getUserTransaction($name);
         
         $this->data['user'] = $name;
-        $this->data['title'] = 'User\'s Profile';
+        $this->data['title'] = 'User Profile';
         $this->render();
     }
 

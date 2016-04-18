@@ -13,8 +13,8 @@ class Management extends Application
         parent::__construct();
     }
 
-    public function index() {
-        $this->load->model('player');
+    public function index() 
+    {
         $this->data['pagebody'] = 'management';	
         $this->data['title'] = 'Agent Management';
         $this->render();

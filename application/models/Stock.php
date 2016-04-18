@@ -163,6 +163,4 @@ class Stock extends CI_Model
         }
         return $stocks;
     }
-    
-
 }
