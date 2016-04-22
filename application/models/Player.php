@@ -3,8 +3,8 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-/**
- * Contacts table.
+/*
+ * This is the player model
  */
 class Player extends CI_Model {
 

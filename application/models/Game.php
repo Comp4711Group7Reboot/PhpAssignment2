@@ -1,5 +1,8 @@
 <?php
 
+/*
+ * This is the Game model
+ */
 class Game extends MY_Model {
 
     public function __construct() 
@@ -55,8 +58,8 @@ class Game extends MY_Model {
     {
         $this->load->library('session');
         $fields = array(
-            'team' => 'S07',
-            'name' => 'Panama Stock Haven',
+            'team' => 'G10',
+            'name' => 'JR Team',
             'password' => $password
         );
         $response = $this->sendPost($url, $fields);

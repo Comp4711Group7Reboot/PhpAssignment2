@@ -1,6 +1,9 @@
 <?php
  defined('BASEPATH') OR exit('No direct script access allowed');
  
+ /*
+  * This is the stock controller
+  */
  class Stocks extends Application {
  
  
