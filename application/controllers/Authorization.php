@@ -2,6 +2,10 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/*
+ * This is the Authorization controller
+ */
+
 class Authorization extends Application {
 
     function __construct() {
@@ -54,6 +58,7 @@ class Authorization extends Application {
         }
     }
 
+    
     function logout() {
         
         $this->session->unset_userdata('userID');

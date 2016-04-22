@@ -2,6 +2,10 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/*
+ * This is the user controller
+ */
+
 class Users extends Application {
 
     function __construct() {

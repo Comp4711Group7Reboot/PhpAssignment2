@@ -1,3 +1,9 @@
+<?php
+/*
+ * Home Page
+ */
+?>
+
 <h2 style="text-align:center">Stocks</h2>
 <table style="width:100%">
     <tr>

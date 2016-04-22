@@ -1,3 +1,9 @@
+<?php
+/*
+ * Game Page
+ */
+?>
+
 <h3 class='{flag}' style="text-align: center">{message}</h3>
 <hr>
 <div class="row">

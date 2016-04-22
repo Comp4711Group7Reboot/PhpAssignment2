@@ -1,3 +1,9 @@
+<?php
+/*
+ * This is the stock view page
+ */
+?>
+
 <div class="row">
     <div class="col-md-6">
         <h1>This is the Stock page</h1>

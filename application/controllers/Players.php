@@ -1,6 +1,10 @@
 <?php
  defined('BASEPATH') OR exit('No direct script access allowed');
  
+ /*
+ * This is the player controller
+ */
+ 
  class Players extends Application {
  
  

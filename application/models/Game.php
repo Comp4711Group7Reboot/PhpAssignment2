@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * This is the Game model
+ */
+
 class Game extends MY_Model {
 
     public function __construct() {
@@ -49,13 +53,42 @@ class Game extends MY_Model {
     public function register($url, $password) {
         $this->load->library('session');
         $fields = array(
-            'team' => 'S07',
-            'name' => 'Panama Stock Haven',
+            'team' => 'G10',
+            'name' => 'JR Team',
             'password' => $password
         );
         $response = $this->sendPost($url, $fields);
         $xml = simplexml_load_string($response);
         $this->session->token = (string) $xml->token;
+    }
+    
+    public function buy($code, $quantity){
+        $this->load->library('session');
+        $fields = array(
+            'team' => 'S07',
+            'token' => $this->session->token,
+            'player' => $this->session->userdata('username'),
+            'stock' => $code,
+            'quantity' => $quantity
+        );
+        $response = $this->sendPost(BSX_SERVER.'buy', $fields);
+        $xml = simplexml_load_string($response);
+        $this->user->addToHoldings($xml);
+    }
+    
+        public function sell($code, $quantity, $token){
+        $this->load->library('session');
+        $fields = array(
+            'team' => 'S07',
+            'token' => $this->session->token,
+            'player' => $this->session->userdata('username'),
+            'stock' => $code,
+            'quantity' => $quantity,
+            'certificate' => $token
+        );
+        $response = $this->sendPost(BSX_SERVER.'sell', $fields);
+        $xml = simplexml_load_string($response);
+        return $xml;
     }
 
     public function getPlayerHoldings() {
@@ -72,5 +105,6 @@ class Game extends MY_Model {
         curl_close($ch);
         return $response;
     }
+    
 
 }

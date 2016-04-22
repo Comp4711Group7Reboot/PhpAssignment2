@@ -1,3 +1,9 @@
+<?php
+/*
+ * This is the stock Detail page
+ */
+?>
+
 {stockDetail}
     Code: {Code}
     Name: {Name}

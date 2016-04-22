@@ -1,3 +1,9 @@
+<?php
+/*
+ * Player proflie page
+ */
+?>
+
 <div class="row">
     <div class="col-md-2">Players: </div>
 </div>

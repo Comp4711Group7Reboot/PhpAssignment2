@@ -1,5 +1,9 @@
 <?php
  
+/*
+ * This is the User model
+ */
+
 class User extends MY_Model 
 {
     public function __construct() 
@@ -39,8 +43,8 @@ class User extends MY_Model
     public function getUserStockHoldings($name) {
  
          $this->db->select('*');
-         $this->db->from('stockholdings');
-         $this->db->where('name', $name);
+         $this->db->from('holdings');
+         $this->db->where('player', $name);
  
          $query = $this->db->get();
  
