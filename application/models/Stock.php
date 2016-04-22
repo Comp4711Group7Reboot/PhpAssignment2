@@ -3,9 +3,9 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-/**
- * Contacts table.
- */
+ /*
+  * This is the stock model
+  */
 class Stock extends CI_Model 
 {
 

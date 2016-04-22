@@ -1,5 +1,8 @@
 <?php
- 
+
+/*
+ * This is the User model
+ */
 class User extends MY_Model 
 {
     public function __construct() 
