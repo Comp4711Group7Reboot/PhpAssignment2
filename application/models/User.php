@@ -44,8 +44,8 @@ class User extends MY_Model
     {
  
          $this->db->select('*');
-         $this->db->from('stockholdings');
-         $this->db->where('name', $name);
+         $this->db->from('holdings');
+         $this->db->where('username', $name);
  
          $query = $this->db->get();
  

@@ -34,21 +34,21 @@ class Games extends Application {
     {
         if($status[0]["state"] == 3 || $status[0]["state"] == 4) 
         {
-            $this->game->register(BSX_SERVER."register", "tuesday");
+            $this->Game->register(BSX_SERVER."register", "tuesday");
         }
     }
     
     
     public function buy()
     {
-        $status = $this->game->getStatus();
+        $status = $this->Game->getStatus();
         
         if($status[0]["state"] == 3 || $status[0]["state"] == 4) {
             $this->session->set_flashdata('item', 'Successfully bought Stock');
             $this->session->set_flashdata('flag', 'alert-success');
             $code = $this->input->post('code');
             $quantity = $this->input->post('quantity');
-            $this->game->buy($code, $quantity);
+            $this->Game->buy($code, $quantity);
         }
         else
         {
@@ -69,7 +69,7 @@ class Games extends Application {
             $code = $this->input->post('code');
             $quantity = $this->input->post('quantity');
             $token = $this->input->post('token');
-            $message = $this->game->sell($code, $quantity, $token);
+            $message = $this->Game->sell($code, $quantity, $token);
             var_dump($message);
         }
         else

@@ -1,4 +1,8 @@
 <?php
+/*
+ * This is the HomePage controller
+ */
+
  defined('BASEPATH') OR exit('No direct script access allowed');
  
  class Homepage extends Application {
