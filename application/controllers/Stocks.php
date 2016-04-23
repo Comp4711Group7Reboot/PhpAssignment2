@@ -24,11 +24,11 @@
     }
    
    
-   function getStockDetail($name)
+   function getStockDetail($code)
     {
-        $this->data['stockDetail'] = $this->Stock->getStockInfo($name);
-        $this->data['stocktransactions']  = $this->Stock->getStockTrans($name);
-        $this->data['stockMovements'] = $this->Stock->getStockMovement($name);
+        $this->data['stockDetail'] = $this->Stock->getStocks(BSX_SERVER.'data/stocks/'.$code);
+        $this->data['stocktransactions']  = $this->Stock->getStockTrans($code);
+        $this->data['stockMovements'] = $this->Stock->getStockMovement($code);
         $this->data['pagebody'] = 'stocks_detail';
         $this->render();
     }

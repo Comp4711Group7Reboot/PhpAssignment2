@@ -9,7 +9,7 @@
     </div>
     <div class="col-md-3" style="font-size: xx-large; margin-left: 2em;">
         <div class="row">
-            Name: <strong>{username}</strong>
+            Name: <strong>{name}</strong>
         </div>
         <div class="row">
             Cash:
