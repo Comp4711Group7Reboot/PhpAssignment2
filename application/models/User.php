@@ -10,6 +10,15 @@ class User extends MY_Model
         parent::__construct('users', 'id');
     }
     
+    
+    public function getUsers() {
+        $this->db->select('*');
+        $this->db->from('users');
+        $this->db->where('role', 'player');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+    
     public function getUserByName($username)
     {
         $this->db->where('name', $username);
@@ -34,7 +43,7 @@ class User extends MY_Model
         
          $this->db->select('*');
          $this->db->from('users');
-         $this->db->where('username', $name);
+         $this->db->where('name', $name);
          $query = $this->db->get();
          return $query->result_array();
      }
@@ -45,7 +54,7 @@ class User extends MY_Model
  
          $this->db->select('*');
          $this->db->from('holdings');
-         $this->db->where('username', $name);
+         $this->db->where('player', $name);
  
          $query = $this->db->get();
  
@@ -73,6 +82,7 @@ class User extends MY_Model
             'quantity' => $info->amount
         );
         $this->db->insert('holdings', $data);
+        
         $data = array(
             'Stock' => $info->stock,
             'DateTime' => $info->datetime,

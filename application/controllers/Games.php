@@ -56,12 +56,12 @@ class Games extends Application {
             $this->session->set_flashdata('flag', 'alert-danger');
         }
         redirect('/games');
-    }
+    }   
     
     public function sell()
     {
         $message = "";
-        $status = $this->game->getStatus();
+        $status = $this->Game->getStatus();
         
         if($status[0]["state"] == 3 || $status[0]["state"] == 4) {
             $this->session->set_flashdata('item', 'Successfully sold Stock');

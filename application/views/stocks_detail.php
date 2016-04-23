@@ -9,10 +9,10 @@
     </tr>
     {stockDetail}
     <tr>
-        <li>Code: {Code}</li>
-        <li>Name: {Name}</li>
-        <li>Category: {Category}</li>
-        <li>Value: {Value}</li>
+        <td>Code: {code}</td>
+        <td>Name: {name}</td>
+        <td>Category: {category}</td>
+        <td>Value: {value}</td>
     </tr>
     {/stockDetail}
 </table>
@@ -22,16 +22,22 @@
 
 <table style="width:100%">
     <tr>
+        <th>SEQ</th>
         <th>DATE</th>
-        <th>PLAYER</th>
-        <th>TRANSACTION</th>
-        <th>QUANTITY</th>
+        <th>Agent</th>
+        <th>Player</th>
+        <th>Stock</th>
+        <th>Transaction</th>
+        <th>Quantity</th>
     </tr>
     {stocktransactions}
     <tr>
+        <td>{seq}</td>
         <td>{datetime}</td>
+        <td>{agent}</td>
         <td>{player}</td>
-        <td>{trans}</td>
+        <td>{stock}</td>
+        <td>{trans}</td>>
         <td>{quantity}</td>
     </tr>
     {/stocktransactions}
@@ -43,6 +49,7 @@
     <tr>
         <th>SEQ</th>
         <th>DATE</th>
+        <th>CODE</th>
         <th>ACTION</th>
         <th>AMOUNT</th>
     </tr>
@@ -50,6 +57,7 @@
     <tr>
         <td>{seq}</td>
         <td>{Datetime}</td>
+        <td>{code}</td>
         <td>{Action}</td>
         <td>{Amount}</td>
     </tr>

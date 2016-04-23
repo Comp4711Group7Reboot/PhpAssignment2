@@ -89,7 +89,7 @@ class Game extends MY_Model {
     {
         $this->load->library('session');
         $fields = array(
-            'team' => 'S07',
+            'team' => 'G10',
             'token' => $this->session->token,
             'player' => $this->session->userdata('username'),
             'stock' => $code,
@@ -105,7 +105,7 @@ class Game extends MY_Model {
     {
         $this->load->library('session');
         $fields = array(
-            'team' => 'S07',
+            'team' => 'G10',
             'token' => $this->session->token,
             'player' => $this->session->userdata('username'),
             'stock' => $code,
