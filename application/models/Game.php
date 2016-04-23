@@ -37,12 +37,12 @@ class Game extends MY_Model {
 
     public function getStocks() 
     {
-        return $this->stock->getStocks(BSX_SERVER . 'data/stocks');
+        return $this->Stock->getStocks(BSX_SERVER . 'data/stocks');
     }
 
     public function getTrend() 
     {
-        return $this->stock->getTrend(BSX_SERVER . 'data/movement');
+        return $this->Stock->getTrend(BSX_SERVER . 'data/movement');
     }
 
     public function getCurrentPlayer() 
@@ -97,7 +97,7 @@ class Game extends MY_Model {
         );
         $response = $this->sendPost(BSX_SERVER.'buy', $fields);
         $xml = simplexml_load_string($response);
-        $this->user->addToHoldings($xml);
+        $this->User->addToHoldings($xml);
     }
     
     

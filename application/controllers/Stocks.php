@@ -1,4 +1,8 @@
 <?php
+/*
+ * This is the Stock controller
+ */
+
  defined('BASEPATH') OR exit('No direct script access allowed');
  
  /*
