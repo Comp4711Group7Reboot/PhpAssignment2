@@ -1,30 +1,31 @@
 <h2 style="text-align:center">Stocks</h2>
+
 <table style="width:100%">
     <tr>
-        <th>STOCK NAME</th>
         <th>CODE</th>
+        <th>NAME</th>
         <th>CATEGORY</th>
         <th>VALUE</th>
     </tr>
     {stocks}
     <tr>
-        <td><a href="stock/{Name}">{Name}</a></td>
-        <td>{Code}</td>
-        <td>{Category}</td>
-        <td>{Value}</td>
+        <td>{code}</td>
+        <td><a href="stock/{code}">{name}</a></td>
+        <td>{category}</td>
+        <td>{value}</td>
     </tr>
     {/stocks}
+</table>
 
+<br />
+<br />
+<table style="width:100%">
     <tr>
-        <th>PLAYER</th>
-        <th>CASH</th>
-        <th>EQUITY</th>
+        <th>Active Players: </th>
     </tr>
-    {players}
+    {users}
     <tr>
-        <td><a href="player/{Player}">{Player}</a></td>
-        <td>{Cash}</td>
-        <td>{Equity}</td>
+        <td><a href="users/getUserInfo/{name}">{name}</a></td>
     </tr>
-    {/players}
+    {/users}
 </table> 

@@ -43,9 +43,8 @@ class Stock extends CI_Model
         return null;
     }
     
-    public function getStockMovement($code){
-        
-
+    public function getStockMovement($code)
+    {   
         $url = BSX_SERVER . "data/movement/" . $code;
         
         $stockMovement = array();
@@ -53,7 +52,7 @@ class Stock extends CI_Model
         {
             while (($data = fgetcsv($handle, 1024, ',', '"')) !== FALSE)
             {
-                //if($data[2] == $code){
+                if($data[2] == $code){
                     $stock = array();
                     $stock["seq"]  = $data[0];
                     $stock["datetime"]  = $data[1];
@@ -61,21 +60,23 @@ class Stock extends CI_Model
                     $stock["action"]  = $data[3];
                     $stock["amount"]  = $data[4];
                     $stockMovement[] = $stock;
-                //}
+                }
             }
             fclose($handle);
         }
+         return $stockMovement;
     }
     
     public function getStockTrans($name)
     {
         $url = "http://bsx.jlparry.com/data/transactions";
+        
         $stockTrans = array();
         if (($handle = fopen($url, 'r')) !== FALSE)
         {
             while (($data = fgetcsv($handle, 1024, ',', '"')) !== FALSE)
             {
-                if($data[4] == $name){
+                //if($data[4] == $name){
                     $stock = array();
                     $stock["seq"]  = $data[0];
                     $stock["datetime"]  = $data[1];
@@ -85,7 +86,7 @@ class Stock extends CI_Model
                     $stock["trans"]  = $data[5];
                     $stock["quantity"]  = $data[6];
                     $stockTrans[] = $stock;
-                }
+                //}
             }
             fclose($handle);
         }
