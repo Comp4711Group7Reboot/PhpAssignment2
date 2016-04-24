@@ -1,5 +1,6 @@
 
-
+<br />
+<br />
 <table style="width:100%">
     <tr>
         <th>CODE</th>
@@ -9,18 +10,39 @@
     </tr>
     {stockDetail}
     <tr>
-        <td>Code: {code}</td>
-        <td>Name: {name}</td>
-        <td>Category: {category}</td>
-        <td>Value: {value}</td>
+        <td>{code}</td>
+        <td>{name}</td>
+        <td>{category}</td>
+        <td>{value}</td>
     </tr>
     {/stockDetail}
 </table>
-
-
-<h4>Transactions</h4>
-
+<br />
+<br />
 <table style="width:100%">
+    <h4>Movements</h4>
+    <tr>
+        <th>SEQ</th>
+        <th>DATE</th>
+        <th>CODE</th>
+        <th>ACTION</th>
+        <th>AMOUNT</th>
+    </tr>
+    
+    {stockMovements}
+    <tr>    
+        <td>{seq}</td>
+        <td>{datetime}</td>
+        <td>{code}</td>
+        <td>{action}</td>
+        <td>{amount}</td>
+    </tr>
+    {/stockMovements}
+</table>
+<br />
+<br />
+<table style="width:100%">
+    <h4>Transactions</h4>
     <tr>
         <th>SEQ</th>
         <th>DATE</th>
@@ -41,25 +63,4 @@
         <td>{quantity}</td>
     </tr>
     {/stocktransactions}
-</table>
-
-<h4>Movements</h4>
-
-<table style="width:100%">
-    <tr>
-        <th>SEQ</th>
-        <th>DATE</th>
-        <th>CODE</th>
-        <th>ACTION</th>
-        <th>AMOUNT</th>
-    </tr>
-    {stockMovements}
-    <tr>
-        <td>{seq}</td>
-        <td>{Datetime}</td>
-        <td>{code}</td>
-        <td>{Action}</td>
-        <td>{Amount}</td>
-    </tr>
-    {/stockMovements}
 </table>

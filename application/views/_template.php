@@ -28,10 +28,10 @@
 					<ul class="nav navbar-nav">
                                            
 						<li class="active">
-                                                    <a href="/">Home</a>
+                                                    <a href="/homepage">Home</a>
 						</li>
                                                 <li>
-                                                    <a href="/players">Player</a>
+                                                    <a href="/users">Player</a>
 						</li>
 						<li>
                                                     <a href="/stock">Stock</a>
